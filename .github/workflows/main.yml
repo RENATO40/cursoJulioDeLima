@@ -26,9 +26,3 @@ jobs:
 
     - name: Run tests
       run: npm test -- --testPathPattern='./tests/pesquisar.test.js'
-
-      run: npm install
-
-    - name: Run tests
-      run: npm test -- --testPathPattern=pesquisar.test.js  # Chama o arquivo de teste específico
-
