@@ -3,10 +3,10 @@ name: Run Tests
 on:
   push:
     branches:
-      - main  # Ou o nome da sua branch principal
+      - main
   pull_request:
     branches:
-      - main  # Ou o nome da sua branch principal
+      - main
 
 jobs:
   test:
@@ -19,9 +19,14 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14'  # Defina a versão do Node.js que você está usando
+        node-version: '14'
 
     - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test -- --testPathPattern='./tests/pesquisar.test.js'
+
       run: npm install
 
     - name: Run tests
